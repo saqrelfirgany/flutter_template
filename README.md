@@ -1,15 +1,7 @@
 ```markdown
 # Flutter Clean Architecture Template 🚀
 
-[![GitHub Stars](https://img.shields.io/github/stars/saqrelfirgany/flutter_template?style=social)](https://github.com/saqrelfirgany/flutter_template/stargazers)
-[![GitHub Issues](https://img.shields.io/github/issues/saqrelfirgany/flutter_template)](https://github.com/saqrelfirgany/flutter_template/issues)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Flutter Version](https://img.shields.io/badge/flutter-3.16.0+-blue)](https://flutter.dev)
-[![Dart Version](https://img.shields.io/badge/dart-3.3.0+-blue)](https://dart.dev)
-
-![Flutter Template Demo](docs/assets/demo.gif)
-
-A production-grade Flutter starter template implementing modern development practices with Clean Architecture, responsive design, and robust state management.
+# A production-grade Flutter starter template implementing modern development practices with Clean Architecture, responsive design, and robust state management.
 
 ## Features ✨
 
