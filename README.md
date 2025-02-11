@@ -1,7 +1,8 @@
 ```markdown
 # Flutter Clean Architecture Template 🚀
 
-# A production-grade Flutter starter template implementing modern development practices with Clean Architecture, responsive design, and robust state management.
+# A production-grade Flutter starter template implementing modern development practices
+# with Clean Architecture, responsive design, and robust state management.
 
 ## Features ✨
 
