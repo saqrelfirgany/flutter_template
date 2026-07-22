@@ -14,3 +14,11 @@ Pulled the template onto a current Flutter install to make sure it still holds u
 Everything now analyzes clean and `flutter test` passes.
 
 **Up next:** wire up real auth (the repository is still a stub), and add coverage for the login form's validation logic.
+
+### 2026-07-22 — labs: Flow radial menu
+
+Started a `labs/` corner of the template for small, self-contained demos of Flutter tricks that don't fit the core app — first one's a radial action menu built on `Flow`, the layout widget that's technically what `Stack` is built on top of but that almost nobody reaches for directly.
+
+The surprising part: once `Flow` has laid its children out, it never has to lay them out again to move them. Every frame it just repaints a `Matrix4` transform per child — so animating four FABs out along a circular arc is one paint pass, not a `Stack` full of `AnimatedPositioned`s each doing their own relayout. Wired `FlowDelegate(repaint: animation)` so the whole thing redraws off the `AnimationController` directly, no `setState` in sight.
+
+**Up next:** custom `ScrollPhysics` for a spring-snap carousel — same idea of reaching one layer below the widgets everyone already knows.
