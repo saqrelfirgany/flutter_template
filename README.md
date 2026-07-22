@@ -228,6 +228,10 @@ git push origin feature/your-feature-name
 - [ ] Performance optimization
 - [ ] Component library
 
+## License 📄
+
+Released under the MIT License — see [LICENSE](LICENSE).
+
 ---
 
 **Let's build something amazing together!** 👩💻👨💻
