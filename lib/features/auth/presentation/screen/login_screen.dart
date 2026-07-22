@@ -13,7 +13,6 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final breakpoint = ResponsiveBreakpoints.of(context);
-    final isVerticalLayout = breakpoint.smallerThan(DESKTOP);
 
     return Scaffold(
       appBar: AppBar(
@@ -38,7 +37,8 @@ class LoginScreen extends StatelessWidget {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    ThemeService.primaryColor(context).withOpacity(0.1),
+                    ThemeService.primaryColor(context)
+                        .withValues(alpha: 0.1),
                     Colors.transparent,
                   ],
                 )
@@ -94,7 +94,10 @@ class LoginScreen extends StatelessWidget {
   Widget _buildIllustration(BuildContext context) {
     return SvgPicture.asset(
       'assets/images/login.svg',
-      color: ThemeService.primaryColor(context),
+      colorFilter: ColorFilter.mode(
+        ThemeService.primaryColor(context),
+        BlendMode.srcIn,
+      ),
       width: ResponsiveBreakpoints.of(context).smallerThan(TABLET)
           ? ScalingHelper.responsiveFontSize(context, 200)
           : ScalingHelper.responsiveFontSize(context, 400),

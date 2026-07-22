@@ -11,12 +11,10 @@ class AppTheme {
       primary: AppColors.lightPrimary,
       secondary: AppColors.lightSecondary,
       surface: AppColors.lightSurface,
-      background: AppColors.lightBackground,
       error: AppColors.lightError,
       onPrimary: AppColors.lightOnPrimary,
       onSecondary: AppColors.lightOnSecondary,
       onSurface: AppColors.lightOnSurface,
-      onBackground: AppColors.lightOnBackground,
       onError: AppColors.lightOnError,
     ),
     scaffoldBackgroundColor: AppColors.lightBackground,
@@ -52,10 +50,10 @@ class AppTheme {
         vertical: 14,
       ),
       labelStyle: TextStyle(
-        color: AppColors.lightOnBackground.withOpacity(0.6),
+        color: AppColors.lightOnBackground.withValues(alpha: 0.6),
       ),
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       color: AppColors.lightSurface,
       elevation: 2,
       shape: RoundedRectangleBorder(
@@ -71,12 +69,10 @@ class AppTheme {
       primary: AppColors.darkPrimary,
       secondary: AppColors.darkSecondary,
       surface: AppColors.darkSurface,
-      background: AppColors.darkBackground,
       error: AppColors.darkError,
       onPrimary: AppColors.darkOnPrimary,
       onSecondary: AppColors.darkOnSecondary,
       onSurface: AppColors.darkOnSurface,
-      onBackground: AppColors.darkOnBackground,
       onError: AppColors.darkOnError,
     ),
     scaffoldBackgroundColor: AppColors.darkBackground,
@@ -112,10 +108,10 @@ class AppTheme {
         vertical: 14,
       ),
       labelStyle: TextStyle(
-        color: AppColors.darkOnBackground.withOpacity(0.6),
+        color: AppColors.darkOnBackground.withValues(alpha: 0.6),
       ),
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       color: AppColors.darkSurface,
       elevation: 2,
       shape: RoundedRectangleBorder(
