@@ -25,7 +25,7 @@ class ThemeService {
 
   /// Background color getter
   static Color backgroundColor(BuildContext context) =>
-      colorScheme(context).background;
+      colorScheme(context).surface;
 
   /// Surface color getter
   static Color surfaceColor(BuildContext context) =>
@@ -44,7 +44,7 @@ class ThemeService {
 
   /// Text color on background
   static Color onBackgroundColor(BuildContext context) =>
-      colorScheme(context).onBackground;
+      colorScheme(context).onSurface;
 
   /// Text color on surface
   static Color onSurfaceColor(BuildContext context) =>

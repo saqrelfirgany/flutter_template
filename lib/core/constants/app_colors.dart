@@ -33,7 +33,9 @@ class AppColors {
   static MaterialColor generateMaterialColor(Color color) {
     List<double> strengths = [.05];
     Map<int, Color> swatch = {};
-    final int r = color.red, g = color.green, b = color.blue;
+    final int r = (color.r * 255.0).round();
+    final int g = (color.g * 255.0).round();
+    final int b = (color.b * 255.0).round();
 
     for (int i = 1; i < 10; i++) {
       strengths.add(0.1 * i);
@@ -49,6 +51,6 @@ class AppColors {
       );
     }
 
-    return MaterialColor(color.value, swatch);
+    return MaterialColor(color.toARGB32(), swatch);
   }
 }

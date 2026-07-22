@@ -47,7 +47,7 @@ class AppFonts {
         fontSize: ScalingHelper.responsiveFontSize(context, _baseCaption),
         fontFamily: secondaryFont,
         fontWeight: FontWeight.w500,
-        color: ThemeService.onBackgroundColor(context).withOpacity(0.7),
+        color: ThemeService.onBackgroundColor(context).withValues(alpha: 0.7),
         letterSpacing: 0.5,
       );
 

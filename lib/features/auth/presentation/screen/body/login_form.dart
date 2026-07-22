@@ -51,7 +51,7 @@ class _LoginFormState extends State<LoginForm> {
         labelStyle: AppFonts.caption(context),
         prefixIcon: Icon(
           Icons.email,
-          color: ThemeService.onBackgroundColor(context).withOpacity(0.6),
+          color: ThemeService.onBackgroundColor(context).withValues(alpha: 0.6),
         ),
       ),
       validator: (value) => value!.isEmpty ? 'Please enter your email' : null,
@@ -68,7 +68,7 @@ class _LoginFormState extends State<LoginForm> {
         labelStyle: AppFonts.caption(context),
         prefixIcon: Icon(
           Icons.lock,
-          color: ThemeService.onBackgroundColor(context).withOpacity(0.6),
+          color: ThemeService.onBackgroundColor(context).withValues(alpha: 0.6),
         ),
       ),
       validator: (value) =>

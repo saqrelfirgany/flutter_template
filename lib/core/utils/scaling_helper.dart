@@ -21,7 +21,7 @@ class ScalingHelper {
     final ratio = screenWidth / baseWidth;
     final scale = pow(ratio, 0.3).clamp(0.8, 1.5).toDouble();
 
-    return scale * MediaQuery.textScaleFactorOf(context);
+    return scale * MediaQuery.textScalerOf(context).scale(1.0);
   }
 
   /// Responsive font size calculation

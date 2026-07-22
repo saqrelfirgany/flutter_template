@@ -1,4 +1,3 @@
-```markdown
 # Flutter Clean Architecture Template 🚀
 
 # A production-grade Flutter starter template implementing modern development practices
@@ -228,9 +227,12 @@ git push origin feature/your-feature-name
 - [ ] Performance optimization
 - [ ] Component library
 
+## License 📄
+
+This project is licensed under the [MIT License](LICENSE).
+
 ---
 
 **Let's build something amazing together!** 👩💻👨💻
 
 [![Open in GitHub](https://img.shields.io/badge/GitHub-View%20on%20GitHub-blue?logo=GitHub)](https://github.com/saqrelfirgany/flutter_template)
-```
