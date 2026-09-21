@@ -1,7 +1,8 @@
 # Flutter Clean Architecture Template 🚀
 
-# A production-grade Flutter starter template implementing modern development practices
-# with Clean Architecture, responsive design, and robust state management.
+# A Flutter starter template built around Clean Architecture layering, responsive
+# design (`responsive_framework`), and Dio-based networking. No state-management
+# package is wired in yet.
 
 ## Features ✨
 
@@ -21,9 +22,8 @@
   - Custom theme extensions
 
 - **⚡ State Management**
-  - BLoC/Cubit pattern implementation
-  - State persistence
-  - Event-driven architecture
+  - No state management package yet — screens use plain `StatelessWidget`/`StatefulWidget`
+  - The Clean Architecture layers (data/domain/presentation) are in place and ready for one to be wired in
 
 - **🌐 Network Layer**
   - Dio HTTP client with interceptors
@@ -32,17 +32,14 @@
   - Logging & monitoring
 
 - **🧩 Component Library**
-  - Reusable widgets
-  - Custom animations
-  - Form validation system
-  - Localization-ready structure
+  - Reusable widgets (`ResponsiveLayout`)
+  - Form validation (see `LoginForm`)
 
 ## Getting Started 🏁
 
 ### Prerequisites
 
-- Flutter SDK ≥3.16.0
-- Dart ≥3.3.0
+- Flutter SDK compatible with Dart ≥3.6.0 (`pubspec.yaml`'s `environment.sdk: ^3.6.0`)
 - Android Studio or VS Code
 - GitHub account
 
@@ -66,34 +63,30 @@ flutter run -d chrome
 
 ## Project Structure 🗂️
 
+The structure actually on disk today (`features/auth` is the only feature so far, and it is thinner than a full Clean Architecture skeleton — no `datasources/`, abstract `repositories/` contracts, `usecases/`, or `cubits/` yet):
+
 ```bash
 lib/
 ├── core/
-│   ├── constants/       # App constants & enums
-│   ├── network/         # Dio client, interceptors, exceptions
-│   ├── theme/           # Theme configurations
-│   ├── utils/           # Helpers & utilities
-│   └── widgets/         # Reusable components
+│   ├── constants/       # App colors
+│   ├── helpers/         # Dio client wrapper
+│   ├── theme/           # Theme configuration + theme_service
+│   ├── utils/           # Fonts, responsive scaling helper
+│   └── widgets/         # ResponsiveLayout
 │
 ├── features/
-│   └── auth/            # Authentication feature
-│       ├── data/        # Data layer implementation
-│       │   ├── datasources/  # Remote/local data sources
-│       │   └── repositories/ # Repository implementations
-│       │
-│       ├── domain/      # Domain layer
-│       │   ├── entities/    # Business objects
-│       │   ├── repositories/ # Abstract contracts
-│       │   └── usecases/    # Business logic
-│       │
-│       └── presentation/  # UI layer
-│           ├── cubits/    # State management
-│           ├── pages/     # Screen implementations
-│           └── widgets/   # Feature-specific components
+│   └── auth/             # Authentication feature (stub)
+│       ├── data/
+│       │   └── repositories/  # AuthRepository (stub implementation)
+│       ├── domain/
+│       │   └── entities/      # User
+│       └── presentation/
+│           └── screen/        # LoginScreen + body/LoginForm
 │
-├── main.dart             # Application entry point
-└── routes.dart           # Navigation configuration
+└── main.dart             # Application entry point
 ```
+
+There is also a `labs/` folder at the repo root (outside `lib/`) with one demo, `flow-radial-menu/` — **this is a stale copy**; new labs belong in the separate `flutter_labs` project, not here.
 
 ## Responsive Design Implementation 📐
 
@@ -149,17 +142,15 @@ Padding(
 
 ## Packages Used 📦
 
+The packages actually declared in `pubspec.yaml` today — no state-management, navigation, or testing-mock packages are in it yet:
+
 | Package | Version | Purpose |
 |---------|---------|---------|
-| [responsive_framework](https://pub.dev/packages/responsive_framework) | ^0.2.0 | Responsive layouts |
-| [dio](https://pub.dev/packages/dio) | ^5.4.0 | HTTP client |
-| [flutter_bloc](https://pub.dev/packages/flutter_bloc) | ^8.1.3 | State management |
-| [adaptive_theme](https://pub.dev/packages/adaptive_theme) | ^5.0.0 | Theme management |
-| [flutter_svg](https://pub.dev/packages/flutter_svg) | ^2.0.7 | SVG rendering |
-| [go_router](https://pub.dev/packages/go_router) | ^12.0.0 | Navigation |
-| [fluttertoast](https://pub.dev/packages/fluttertoast) | ^8.2.2 | Toast notifications |
-| [equatable](https://pub.dev/packages/equatable) | ^2.0.5 | Value comparison |
-| [mockito](https://pub.dev/packages/mockito) | ^5.4.0 | Testing mocks |
+| [responsive_framework](https://pub.dev/packages/responsive_framework) | ^1.5.1 | Responsive layouts |
+| [dio](https://pub.dev/packages/dio) | ^5.8.0+1 | HTTP client |
+| [pretty_dio_logger](https://pub.dev/packages/pretty_dio_logger) | ^1.4.0 | Dio request/response logging |
+| [adaptive_theme](https://pub.dev/packages/adaptive_theme) | ^3.7.0 | Light/dark theme management |
+| [flutter_svg](https://pub.dev/packages/flutter_svg) | ^2.0.17 | SVG rendering |
 
 ## Contribution Guide 🤝
 
@@ -215,17 +206,9 @@ git push origin feature/your-feature-name
 
 ## Roadmap 🗺️
 
-### Q0 2024
-- [ ] Implement CI/CD pipeline
-- [ ] Add Firebase integration
-- [ ] Internationalization setup
-- [ ] Expand testing coverage
-
-### Q0 2024
-- [ ] Desktop support
-- [ ] State persistence
-- [ ] Performance optimization
-- [ ] Component library
+From `DEVLOG.md`'s latest entry:
+- [ ] Wire up real authentication — `AuthRepository` is still a stub
+- [ ] Add test coverage for the login form's validation logic
 
 ## License 📄
 
